@@ -12,3 +12,18 @@ class Person {
 
 const person = new Person('tom', 19);
 person.show();
+
+// ------------------------------------
+// 继承
+class Worker extends Person{
+    constructor(name, age, job){
+        super(name, age);
+        this.job = job
+    }
+
+    showJob(){
+        alert(this.job);
+    }
+}
+
+const labor = (new Worker('tom', 12, 'haha')).showJob();
