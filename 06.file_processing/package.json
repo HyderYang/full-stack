@@ -2,5 +2,8 @@
   "name": "06.file_processing",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "koa": "2.6.*"
+  }
 }
