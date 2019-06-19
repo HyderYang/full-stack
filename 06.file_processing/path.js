@@ -10,7 +10,7 @@ console.log(path.resolve('/root/a/b', '../c', 'build', '..', 'strict'));
 
 // path.resolve 解决复杂路径逻辑字符串
 
-console.log(__filename)
-console.log(__dirname)
+console.log(__filename);
+console.log(__dirname);
 
 console.log(__dirname, '/build'); // 绝对路径
