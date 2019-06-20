@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>fetch</title>
+  <script>
+    function show({g}){
+      console.log(g);
+    }
+
+    window.onload = function() {
+      let txt = document.getElementById('text');
+      txt.oninput = function() {
+        let url = `https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=pc_web&wd=${this.value}&cb=show`
+        let script = document.createElement('script');
+        script.src = url;
+
+        document.head.appendChild(script);
+      }
+    }
+  </script>
+</head>
+<body>
+<input type="text" id="text">;
+</body>
+</html>
