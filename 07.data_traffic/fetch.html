@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>fetch</title>
+  <script>
+    window.onload = function() {
+      let btn = document.getElementById('btn1');
+      btn.onclick = async function() {
+        // 请求
+        let res = await fetch('data/data.txt');
+        // 解析
+        let data = await res.text();
+        console.log(data);
+      }
+    }
+  </script>
+</head>
+<body>
+<button id="btn1">fetch读取</button>
+</body>
+</html>
