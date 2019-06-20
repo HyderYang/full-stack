@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>fetch</title>
+  <script>
+    window.onload = function() {
+      let btn = document.getElementById('btn1');
+      btn.onclick = async function() {
+        let res_json = await fetch('data/1.json');
+        let json_data = await res_json.json();
+        console.log(json_data);
+      }
+    }
+  </script>
+</head>
+<body>
+<button id="btn1">fetch读取</button>
+</body>
+</html>
