@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>websocket</title>
+  <script src="http://localhost:8989/socket.io/socket.io.js"></script>
+
+  <script>
+    let sock = io.connect('ws://localhost:8989/');
+    sock.emit('aaa', 112, 12);
+
+    sock.on('timer', (time) => {
+        console.log(time);
+    })
+  </script>
+</head>
+<body>
+
+</body>
+</html>

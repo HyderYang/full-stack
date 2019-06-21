@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    const ws = new WebSocket('ws://localhost:8989/');
+
+    ws.onopen = () => {
+      console.log('connection')
+    };
+
+    ws.onmessage = () => {
+
+    };
+
+    ws.onclose = () => {
+
+    };
+
+    ws.onerror = () => {
+
+    };
+  </script>
+</head>
+<body>
+
+</body>
+</html>
