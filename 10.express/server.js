@@ -1,24 +1,29 @@
 const express = require('express');
 const body = require('body-parser');
 const querystring = require('querystring');
+const multer = require('multer');
+
 const server = express();
 server.listen(8989);
 
-// server.use(body.urlencoded({
-//   extended: false
-// }));
+server.use(body.urlencoded({
+  extended: false
+}));
 
-server.use((req, res, next) => {
-  let arr = [];
-  req.on('data', buffer => {
-    arr.push(buffer);
-  });
+let obj = multer({dest: './static'});
+server.use(obj.any());
 
-  req.on('end', () => {
-      req.body = querystring.parse(Buffer.concat(arr).toString());
-  });
-  next();
-});
+// server.use((req, res, next) => {
+//   let arr = [];
+//   req.on('data', buffer => {
+//     arr.push(buffer);
+//   });
+//
+//   req.on('end', () => {
+//       req.body = querystring.parse(Buffer.concat(arr).toString());
+//   });
+//   next();
+// });
 
 server.get('/a', (req, res, next) => {
   // 解析get数据
@@ -32,7 +37,7 @@ server.get('/a', (req, res, next) => {
 });
 
 server.post('/reg', (req, res) => {
-    console.log(req.body);
+    console.log(req.files);
 });
 
 server.use(express.static('./static/'));
