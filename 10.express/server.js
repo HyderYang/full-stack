@@ -1,6 +1,7 @@
 const express = require('express');
 const body = require('body-parser');
 const querystring = require('querystring');
+const cookiParser = require('cookie-parser');
 const multer = require('multer');
 
 const server = express();
@@ -37,7 +38,8 @@ server.get('/a', (req, res, next) => {
 });
 
 server.post('/reg', (req, res) => {
-    console.log(req.files);
+  console.log(req.body);
+  console.log(req.files);
 });
 
 server.use(express.static('./static/'));
