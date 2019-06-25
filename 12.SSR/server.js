@@ -4,6 +4,7 @@ const Koa = require('koa');
 const Router = require('koa-router');
 const body = require('koa-better-body');
 const session = require('koa-session');
+const ejs = require('koa-ejs');
 
 const statics = require('./routers/static');
 
@@ -24,6 +25,15 @@ server.use(session({
 
 // 数据库
 server.context.db = require('./libs/database');
+
+// 渲染
+ejs(server, {
+  root: path.resolve(__dirname, 'template'),
+  layout: false,
+  viewExt: 'ejs',
+  cache: false,
+  debug: false
+});
 
 // 路由
 const router = new Router();

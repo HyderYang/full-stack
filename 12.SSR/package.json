@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "await-fs": "^1.0.0",
     "co-mysql": "^1.0.0",
     "ejs": "^2.6.2",
     "koa": "^2.7.0",
