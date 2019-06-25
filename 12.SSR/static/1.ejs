@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<%= name %>
+<div>
+    <ul>
+        <%for(let i=0; i<arr.length; i++){%>
+            <li><%=arr[i]%></li>
+        <%}%>
+    </ul>
+</div>
+
+<div>
+    <%arr.forEach(item=>{%>
+        <li><%=item%></li>
+    <%})%>
+</div>
+
+<% include common.ejs %>
+
+</body>
+</html>
