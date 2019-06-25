@@ -1,4 +1,4 @@
-const pug = require('pug');
+const pug = require('12.SSR/abandon/pug');
 
 pug.renderFile('./template/1.pug',
   {
