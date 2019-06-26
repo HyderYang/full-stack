@@ -7,6 +7,7 @@ const session = require('koa-session');
 const ejs = require('koa-ejs');
 
 const statics = require('./routers/static');
+const config = require('./config');
 
 const server = new Koa();
 server.listen(8989);
@@ -25,6 +26,8 @@ server.use(session({
 
 // 数据库
 server.context.db = require('./libs/database');
+// 配置
+server.context.config = config;
 
 // 渲染
 ejs(server, {
@@ -39,14 +42,14 @@ ejs(server, {
 const router = new Router();
 
 // 全局拦截
-router.use(async (ctx, next) => {
-  try {
-    await next();
-  } catch (e) {
-    ctx.status = 500;
-    ctx.body = 'server error'
-  }
-});
+// router.use(async (ctx, next) => {
+//   try {
+//     await next();
+//   } catch (e) {
+//     ctx.status = 500;
+//     ctx.body = 'server error'
+//   }
+// });
 router.use('/admin', require('./routers/admin'));
 router.use('/api', require('./routers/api'));
 router.use('', require('./routers/www'));
