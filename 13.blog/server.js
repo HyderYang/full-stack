@@ -14,7 +14,7 @@ server.listen(8989);
 
 // 请求体 body 中间件
 server.use(body({
-  uploadDir: path.resolve(__dirname, './static/upload'),
+  uploadDir: config.UPLOAD_DIR,
 }));
 
 // session 中间件
