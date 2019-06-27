@@ -6,6 +6,7 @@ const babel = require('gulp-babel');
 const map = require('gulp-sourcemaps');
 const cssmin = require('gulp-cssmin');
 const image = require('gulp-imagemin');
+const livereload = require('gulp-livereload');
 
 
 gulp.task('js', () => {
@@ -79,3 +80,31 @@ gulp.task('image', () => {
     .pipe(gulp.dest('./build/img'));
 });
 
+
+gulp.task('watch', () => {
+  gulp.watch('./src/js/*.js', ['es6']);
+});
+
+const js_path = ['./src/js/**/*.js'];
+
+gulp.task('reload', () => {
+   return gulp
+     .src(js_path)
+     .pipe(babel({
+       presets: ['@babel/env']
+     }))
+     .pipe(concat('bundle.min.js'))
+     .pipe(gulp.dest('./build/reload/'))
+     .pipe(livereload())
+});
+
+gulp.task('reload_watch', () => {
+  livereload.listen();
+  gulp.watch(js_path, ['reload']);
+  gulp.watch([
+    //html css文件路径
+    ...js_path
+  ], file => {
+    livereload.changed(file.path);
+  });
+});
