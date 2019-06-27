@@ -1,0 +1,136 @@
+/* CSS Document */
+html, body {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+    }
+body{-webkit-text-size-adjust:none;}
+*{-webkit-text-size-adjust:none; font-size:12px; font-family:"微软雅黑"; margin:0; padding:0; outline:none;}
+input,textarea,select{ font-size:100%;}ul{ list-style:none;}
+a,span{ display:inline-block; border: medium none;display: inline-block;outline: medium none;text-decoration: none;-webkit-tap-highlight-color: rgba(0,0,0,0);}
+img{ vertical-align:top; border:none; width:100%;}
+{margin:0 auto; position:relative; /*display:none;*/ }
+.rel{ position:relative;}
+.abs{position:absolute; }
+.main{ position:relative; width:100%; height: 100%;}
+.section{ position:relative; width:100%;overflow:hidden;}
+img{ width:100%;}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {     
+		overflow: hidden;
+		position: absolute;
+		left: 100%;
+		top: 0;
+}
+.swiper-slide.active {     
+		left: 0;
+}
+.bg{ width: 8003px; top: 0; left: 0;}
+.bg .img_bg{float: left;width: 1667px;}
+.bg .img_bg:nth-child(1){ width: 1334px; }
+.main .peo_con{display:none;top:26px; left:-100px;width: 750px; height: 1000px;}
+.peo1{ width: 100%; height: 100%; background: url("../images/peo/peo1.png") no-repeat;}
+.peo1_move .peo1{animation: step1 1.2s steps(2) both infinite;-webkit-animation: step1 1.2s steps(2) both infinite;}
+.peo1_z{ width: 350px; left: 1443px; top: 96px;} 
+
+.main .peo2_con{ left: 0;}
+.peo2{ width: 100%; height: 100%; background: url("../images/peo/peo2.png?v=1") no-repeat;}
+.peo1_move .peo2{animation: step1 1.2s steps(2) both infinite;-webkit-animation: step1 1.2s steps(2) both infinite;}
+.peo2_z{ width: 350px; left: 3962px; top: 96px;} 
+
+.peo3{ width: 100%; height: 100%; background: url("../images/peo/peo2.png?v=1") no-repeat;}
+.peo1_move .peo3{animation: step1 1.2s steps(2) both infinite;-webkit-animation: step1 1.2s steps(2) both infinite;}
+.peo3_z{ width: 583px; left: 6195px; top: 96px;} 
+
+.cup{width: 170px; top: 200px; left: 400px;transform:rotate(12deg);-webkit-transform:rotate(12deg); }
+.peo1_name{ width: 100px; left: 420px; top: 110px; display: none; height: 0; overflow: hidden;}
+.peo1_name_show{animation: name1Show 1.5s 0s linear both; -webkit-animation: name1Show 1.5s 0s linear both; }
+
+.page1_txt{ position: absolute; top:560px ; left: 200px; width: 401px; height: 0; overflow: hidden;}
+.page1_txt1{animation: txtShow 1.5s 0s linear both; -webkit-animation: txtShow 1.5s 0s linear both; }
+.page1_txt2{animation: txtShow 1.5s 1.5s linear both; -webkit-animation: txtShow 1.5s 1.5s linear both; }
+.page1_txt3{animation: txtShow 1.5s 3s linear both; -webkit-animation: txtShow 1.5s 3s linear both; }
+.page1_txt4{animation: txtShow 1.5s 4.5s linear both; -webkit-animation: txtShow 1.5s 4.5s linear both; }
+.page1_txt5{animation: txtShow 1.5s 6s linear both; -webkit-animation: txtShow 1.5s 6s linear both; }
+.page1_txt6{animation: txtShow 1.5s 7.5s linear both; -webkit-animation: txtShow 1.5s 7.5s linear both; }
+.page1_txt7{animation: txtShow 1.5s 9s linear both; -webkit-animation: txtShow 1.5s 9s linear both; }
+.page1_txt8{animation: txtShow 1.5s 10.5s linear both; -webkit-animation: txtShow 1.5s 10.5s linear both; }
+.page1_txt9{animation: txtShow 1.5s 12s linear both; -webkit-animation: txtShow 1.5s 12s linear both; }
+.page1_txt10{animation: txtShow 1.5s 13.5s linear both; -webkit-animation: txtShow 1.5s 13.5s linear both; }
+
+.peo1_txt{position: absolute; width: 163px; height: 0; overflow: hidden; top: 180px; left: 700px; display: none;}
+.peo1_txt1.peo1_txt_show{animation: txt2Show 3s 0s linear both; -webkit-animation: txt2Show 3s 0s linear both;}
+.peo1_txt2.peo1_txt_show{animation: txt2Show 3s 3s linear both; -webkit-animation: txt2Show 3s 3s linear both;}
+.peo1_txt3.peo1_txt_show{animation: txt2Show 3s 6s linear both; -webkit-animation: txt2Show 3s 6s linear both;}
+
+
+.peo2_name{ width: 100px; left: 10px; top: 100px; display: none; height: 0; overflow: hidden;}
+.peo2_name_show{animation: name2Show 1.5s 0s linear both; -webkit-animation: name2Show 1.5s 0s linear both; }
+.peo2_txt{position: absolute; width: 223px; height: 0; overflow: hidden; top: 180px; left: 500px; display: none;}
+.peo2_txt1.peo2_txt_show{animation: txt3Show 3s 0s linear both; -webkit-animation: txt3Show 3s 0s linear both;}
+.peo2_txt2.peo2_txt_show{animation: txt3Show 3s 3s linear both; -webkit-animation: txt3Show 3s 3s linear both;}
+.peo2_txt3.peo2_txt_show{animation: txt3Show 3s 6s linear both; -webkit-animation: txt3Show 3s 6s linear both;}
+.peo2_txt4.peo2_txt_show{animation: txt3Show 3s 9s linear both; -webkit-animation: txt3Show 3s 9s linear both;}
+
+
+
+
+@-webkit-keyframes txtShow {
+  0% { height: 0;}
+  100% {height: 159px;}
+}
+
+@keyframes txtShow {
+    0% {height: 0;}
+    100% { height: 159px;}
+}
+
+@-webkit-keyframes txt2Show {
+  0% { height: 0;}
+  100% {height: 432px;}
+}
+
+@keyframes txt2Show {
+    0% {height: 0;}
+    100% { height: 432px;}
+}
+@-webkit-keyframes txt3Show {
+  0% { height: 0;}
+  100% {height: 320px;}
+}
+
+@keyframes txt3Show {
+    0% {height: 0;}
+    100% { height: 320px;}
+}
+@-webkit-keyframes name1Show {
+  0% { height: 0;}
+  100% {height: 194px;}
+}
+
+@keyframes name1Show {
+    0% {height: 0;}
+    100% { height: 194px;}
+}
+@-webkit-keyframes name2Show {
+  0% { height: 0;}
+  100% {height: 235px;}
+}
+
+@keyframes name2Show {
+    0% {height: 0;}
+    100% { height: 235px;}
+}
+
+@keyframes step1 {
+ 	0% {background-position: 0 0;}
+    100% {background-position: -1500px 0;}
+}    
+@-webkit-keyframes step1 {
+    0% {background-position: 0 0;}
+    100% {background-position: -1500px 0;}
+}

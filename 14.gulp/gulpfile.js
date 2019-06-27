@@ -4,6 +4,9 @@ const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const babel = require('gulp-babel');
 const map = require('gulp-sourcemaps');
+const cssmin = require('gulp-cssmin');
+const image = require('gulp-imagemin');
+
 
 gulp.task('js', () => {
  return gulp
@@ -48,4 +51,31 @@ gulp.task('map', () => {
 });
 
 
+// 压缩css
+gulp.task('css', () => {
+  return gulp
+    .src(['./src/css/**/*.css'])
+    .pipe(concat('style.min.css'))
+    .pipe(cssmin())
+    .pipe(gulp.dest('./build/css/min'));
+});
+
+
+// 压缩image
+gulp.task('image', () => {
+  return gulp
+    .src(['./src/img/**/*.jpg', './src/img/**/*.png', './src/img/**/*.gif'])
+    .pipe(image([
+      image.gifsicle({        // gif配置
+        interlaced: true      // 隔行扫描 随加载进度越来越清晰
+      }),
+      image.jpegtran({
+        proressive: true      // 渐进加载 同上
+      }),
+      image.optipng({
+        optimizationLevel: 5  // 压缩级别 max=5
+      })
+    ]))
+    .pipe(gulp.dest('./build/img'));
+});
 
