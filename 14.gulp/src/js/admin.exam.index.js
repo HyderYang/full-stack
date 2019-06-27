@@ -1,10 +1,10 @@
 var adminNewsIndex = {
-	initPage: function() {
+	initPage() {
 		var self = this;
 		self.initDeleteBtn(self);
 		self.initSelectBtn(self);
 	}, 
-	initDeleteBtn: function(self) {
+	initDeleteBtn(self) {
 		$('.delete').click(function(){
 			var trDom = $(this).parents('tr');
 			var id = trDom.attr('data-id');
@@ -19,7 +19,7 @@ var adminNewsIndex = {
 			});
 		});
 	},
-	initSelectBtn: function(self) {
+	initSelectBtn(self) {
 		$("input[name='status']").bootstrapSwitch({
 			onText: "有效",
 			offText: "无效",
