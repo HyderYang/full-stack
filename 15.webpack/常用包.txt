@@ -6,3 +6,10 @@ autoprefixer        根据浏览器使用比率来加前缀 默认 > 5% 使用�
 
 file-loader         读取/输出文件
 url-loader          读取并输出base64文件
+
+less                less核心文件
+less-loader         编译less文件 依赖 less style-loader和css-loader
+
+babel-loader
+@babel/core
+@babel/preset-env

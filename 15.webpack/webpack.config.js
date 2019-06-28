@@ -45,11 +45,24 @@ module.exports = {
           }
         }
       },
+      {
+        test: /.jsx?/,
+        // 排除
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      }
     ]
   },
 
   // 插件 >增强功能
   plugins: [
 
-  ]
+  ],
+
+  devtool: 'source-map'
 };
