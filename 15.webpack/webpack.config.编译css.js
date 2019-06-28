@@ -1,5 +1,4 @@
 const path = require('path');
-const autoprefixer = require('autoprefixer');
 
 module.exports = {
   //模式
@@ -25,15 +24,16 @@ module.exports = {
   module: {
     // 规则
     rules:[
+      // 每个loader最少有两项 test/use
+      // 即 检测文件规则条件 根据条件检测出后 使用哪个loader 来解析
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader']
+        // use: 'css-loader' // 解析css文件
+        use: ['style-loader', 'css-loader'] // style-loader > 在页面上将css解析成style标签
+        // use 顺序很重要 简单理解 数组从后往前使用loader
+        // css-loader > style-loader
+
       }
     ]
-  },
-
-  // 插件 >增强功能
-  plugins: [
-
-  ]
+  }
 };

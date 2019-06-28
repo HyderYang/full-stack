@@ -1,2 +1,5 @@
- style-loader
- css-loader
+ style-loader       将css内容解析为style标签 输出到html
+ css-loader         将css内容解析 (解析为js)
+
+postcss-loader      加载css 并识别css内容
+autoprefixer        根据浏览器使用比率来加前缀 默认 > 5% 使用率浏览器即兼容
