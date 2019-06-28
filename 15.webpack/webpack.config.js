@@ -30,6 +30,10 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'postcss-loader']
       },
       {
+        test: /\.less$/,
+        use: ['style-loader', 'css-loader', 'less-loader']
+      },
+      {
         test: /\.(jpg|png|gif)$/i,
         // 字典形式: 可以设置参数
         use: {
