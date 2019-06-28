@@ -3,3 +3,6 @@
 
 postcss-loader      加载css 并识别css内容
 autoprefixer        根据浏览器使用比率来加前缀 默认 > 5% 使用率浏览器即兼容
+
+file-loader         读取/输出文件
+url-loader          读取并输出base64文件

@@ -34,13 +34,12 @@ module.exports = {
         // 字典形式: 可以设置参数
         use: {
           // 文件解析
-          loader: 'url-loader',
+          loader: 'file-loader',
           options: {
-            outputPath: 'images/',    // 输出目录
-            limit: 1024 * 20          // 限制大小 超过此体积为文件 不超过为base64
+            outputPath: 'images/'
           }
         }
-      },
+      }
     ]
   },
 
