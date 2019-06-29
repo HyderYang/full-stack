@@ -10,6 +10,12 @@ url-loader          读取并输出base64文件
 less                less核心文件
 less-loader         编译less文件 依赖 less style-loader和css-loader
 
-babel-loader
-@babel/core
-@babel/preset-env
+babel-loader        babel的loader
+@babel/core         核心库
+@babel/preset-env   babel运行环境
+
+webpack             webpack本地库
+webpack-cli         webpack命令行工具
+webpack-dev-server  dev服务器
+webpack命令必须写在 package.json的 scripts 下
+注意路径问题
