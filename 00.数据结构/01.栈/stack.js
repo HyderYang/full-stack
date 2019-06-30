@@ -2,9 +2,11 @@
 
 function Stack(){
   var items = [];
+  var minItem = null;
 
   this.push = function(item) {
     items.push(item);
+    putMin(item);
   };
 
   this.pop = function() {
@@ -26,7 +28,21 @@ function Stack(){
   this.clear = function() {
     items = [];
   };
+
+  this.min = function() {
+    return minItem;
+  };
+
+  var putMin = function(item) {
+    if (minItem === null) {
+      minItem = item;
+    } else if (minItem != null && minItem > item) {
+      minItem = item;
+    }
+  }
 }
+
+module.exports = Stack;
 
 
 

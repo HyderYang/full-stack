@@ -7,34 +7,7 @@
   ()()abase(sadf(sdf)sadf)fds)()
   jami(d's(ada(safd)fs)sadf)sdf))
  */
-
-function Stack(){
-  var items = [];
-
-  this.push = function(item) {
-    items.push(item);
-  };
-
-  this.pop = function() {
-    return items.pop();
-  };
-
-  this.top = function() {
-    return items[items.length - 1];
-  };
-
-  this.isEmpty = function() {
-    return items.length === 0;
-  };
-
-  this.size = function() {
-    return items.length;
-  };
-
-  this.clear = function() {
-    items = [];
-  };
-}
+const Stack = require('./stack');
 
 function is_legal_brackets(string){
   var stack = new Stack();
