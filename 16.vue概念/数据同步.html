@@ -6,6 +6,7 @@
 </head>
 <body>
   <div id="div1">
+    <input type="text" v-model="name">
     姓名: {{name}} <br>
     年两: {{age}} <br>
   </div>
@@ -22,10 +23,10 @@
 
   const data = new Proxy(_data, {
     set(obj, name, value){
-      console.log(`尝试设置> ${name} 设置为> ${value}`);
+      // console.log(`尝试设置> ${name} 设置为> ${value}`);
 
       obj[name] = value;
-      console.log('数据变了');
+      // console.log('数据变了');
       render();
     },
 
@@ -36,10 +37,28 @@
 
   // 渲染
   function render(){
+    // 页面渲染
     el.innerHTML = template.replace(/\{\{\w+\}\}/g, (str) => {
       str = str.substring(2, str.length-2);
       return _data[str];
-    })
+    });
+
+    // 找所有的v-model
+    Array.from(el.getElementsByTagName('input'))
+      // 过滤 v-model
+      .filter((ele) => {
+        return ele.getAttribute('v-model')
+      })
+      // 循环所有 v-model 并重新赋值
+      .forEach((input) => {
+        const name = input.getAttribute('v-model');
+        input.value = _data[name];
+
+        input.oninput = function() {
+          data[name] = this.value;
+        }
+      })
+
   }
 
   data.name = 'new'
