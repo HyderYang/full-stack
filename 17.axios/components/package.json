@@ -3,9 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
   "devDependencies": {
     "css-loader": "^3.0.0",
     "style-loader": "^0.23.1",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "webpack-dev-server": "^3.7.2",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5"
   }
 }

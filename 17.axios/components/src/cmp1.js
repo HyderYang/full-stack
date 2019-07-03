@@ -1,29 +1,27 @@
 import Vue from 'vue/dist/vue.esm'
 
-const vm = new Vue({
-  el: '#dom1',
+Vue.component('cmp1', {
+  props: [
+    'name',
+    'list'
+  ],
 
-  data: {
-
+  data() {
+    return {
+      a: 12,
+      b: 13
+    }
   },
 
   template: `
   <div>
-    <cmp1></cmp1>
+    result={{a + b}}
+    <br>
+    姓名: {{name}}
+    <br>
+    <ul>
+      <li v-for="item in list">{{item}}</li>
+    </ul>
   </div>
-  `,
-
-  components: {
-    cmp1: {
-      data: () => {
-        return {
-
-        }
-      },
-
-      template: `
-        <div>aaaa</div>
-      `
-    }
-  }
+  `
 });
