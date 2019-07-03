@@ -6,7 +6,9 @@ const vm = new Vue({
 
   data: {
     name: '',
-    age: 0
+    age: 0,
+    a: 12,
+    b: 23
   },
 
   async created() {
@@ -31,10 +33,27 @@ const vm = new Vue({
     this.age = data.age;
   },
 
+  methods: {
+    async fn_submit(){
+      const form = this.$refs['form1'];
+      let formdata = new FormData(form);
+      const res = await fetch(form.action, {
+        method: form.method,
+        body: formdata
+      });
+      let result = await res.json();
+
+      this.result = result
+    }
+  },
+
   template: `
     <div>
-      姓名: {{name}}
-      年龄: {{age}}
+      <form ref="form1" @click.prevent="fn_submit()" action="./data/sum.php" method="post">
+        <input type="text" v-model="a">
+        <input type="text" v-model="b">
+        <input type="submit" value="计算">
+      </form>
     </div>
   `
 });
