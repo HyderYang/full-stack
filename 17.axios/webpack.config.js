@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   mode: 'development',
 
-  entry: './src/vm.js',
+  entry: './src/vm1.js',
 
   output: {
     path: path.resolve(__dirname, 'dest'),
