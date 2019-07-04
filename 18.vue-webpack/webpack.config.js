@@ -13,11 +13,19 @@ module.exports = function(env, argv){
       rules: [
         {
           test: /\.css$/i,
-          use: ['style-loader', 'css-loader']
+          use: ['vue-style-loader', 'css-loader']
         },
         {
           test: /\.(eot|svg|woff|woff2)$/i,
           use: 'file-loader'
+        },
+        {
+          test: /\.vue$/i,
+          use: 'vue-loader'
+        },
+        {
+          test: /\.less/i,
+          use: ['vue-style-loader', 'css-loader', 'less-loader']
         }
       ]
 

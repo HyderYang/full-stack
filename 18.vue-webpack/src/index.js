@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Parent from './components/parent';
+import vueParent from './components/2.0/parent.vue'
 
 const vm = new Vue({
   el: "#app",
@@ -8,8 +9,9 @@ const vm = new Vue({
 
   },
 
-  component: {
+  components: {
     Parent,
+    vueParent
   },
 
   created() {
@@ -23,6 +25,8 @@ const vm = new Vue({
   template: `
   <div>
     <parent />
+    <hr>
+    <vueParent />
   </div>
   `
 });
