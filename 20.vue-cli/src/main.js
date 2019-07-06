@@ -32,6 +32,9 @@ const store = new Vuex.Store({
   },
   // 类似计算属性
   getters: {
+    count(state){
+      return state.a + state.b;
+    }
   },
   // 拆分模块
   modules: {
