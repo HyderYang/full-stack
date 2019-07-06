@@ -1,5 +1,8 @@
 <template>
   <div>
+
+    {{$store.state}}
+
     <table class="table">
       <thead>
       <tr>
