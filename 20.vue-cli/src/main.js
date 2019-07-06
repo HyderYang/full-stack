@@ -21,8 +21,14 @@ const store = new Vuex.Store({
     a: 12, b: 5
   },
   mutations: {
+    add (state, arg) {
+      state.a += arg
+    }
   },
   actions: {
+    add (ctx, arg) {
+      ctx.commit('add', arg)
+    }
   },
   // 类似计算属性
   getters: {
