@@ -3,6 +3,7 @@
     <ul>
       <router-link :to="{name: 'HelloWorld'}">列表</router-link>
       <router-link :to="{name: 'store'}">修改vuex数据</router-link>
+      <router-link :to="{name: 'animate'}">动画</router-link>
     </ul>
     <router-view/>
   </div>
