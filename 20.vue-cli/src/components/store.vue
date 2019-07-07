@@ -13,6 +13,11 @@
 
     <p>mapState.a: {{a}}</p>
     <p>mapState.b: {{b}}</p>
+
+    <hr>
+
+    <p>模块a: {{$store.state.mod_a.a}}</p>
+    <p>模块b: {{$store.state.mod_b.b}}</p>
   </div>
 </template>
 
@@ -26,6 +31,7 @@
         // 可以直接调用 mutations
         // this.$store.commit('add', 5)
 
+        // 调用 actions
         this.$store.dispatch('add', 3);
       }
     },

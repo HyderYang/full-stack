@@ -12,6 +12,19 @@ Vue.config.productionTip = false;
 
 // vuex 挂载
 Vue.use(Vuex);
+
+const mod_a = {
+  state: {
+    a: 'mod_a'
+  }
+};
+
+const mod_b = {
+  state: {
+    b: 'mod_b'
+  }
+};
+
 // vuex声明store对象 (注意顺序 先挂载 再使用)
 const store = new Vuex.Store({
   // 开发为true 声场为false
@@ -38,6 +51,8 @@ const store = new Vuex.Store({
   },
   // 拆分模块
   modules: {
+    mod_a,
+    mod_b
   },
 });
 
