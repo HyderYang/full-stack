@@ -1,23 +1,29 @@
 <template>
   <div>
-    <Header />
-    <section>
-      <div class="ydc-content-slide ydc-body">
-        <div class="ydc-flex">
-          <!-- left menu -->
-          <div class="ydc-column ydc-column-2">
-            <Menu />
-          </div>
+    <template v-if="$route.name == 'login'">
+      <router-view/>
+    </template>
 
-          <!-- content -->
-          <div class="ydc-column ydc-column-8">
-            <router-view/>
+    <template v-if="$route.name != 'login'">
+      <Header />
+      <section>
+        <div class="ydc-content-slide ydc-body">
+          <div class="ydc-flex">
+            <!-- left menu -->
+            <div class="ydc-column ydc-column-2">
+              <Menu />
+            </div>
+
+            <!-- content -->
+            <div class="ydc-column ydc-column-8">
+              <router-view/>
+            </div>
           </div>
         </div>
-      </div>
 
-      <Footer />
-    </section>
+        <Footer />
+      </section>
+    </template>
   </div>
 </template>
 

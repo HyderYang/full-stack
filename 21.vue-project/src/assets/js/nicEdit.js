@@ -525,7 +525,7 @@ var nicEditorInstance = bkClass.extend({
                 width: (newX - 8) + "px",
                 margin: "4px",
                 minHeight: newY + "5px"
-            }).addClass("main").appendTo(this.editorContain);
+            }).addClass("main.js.js").appendTo(this.editorContain);
             G.setStyle({
                 display: "none"
             });
